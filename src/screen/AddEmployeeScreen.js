@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ModalComponent from "../component/ModalComponent";
 
 const AddEmployeeScreen = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
     setIsModalOpen(true);
   };
