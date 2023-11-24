@@ -1,14 +1,23 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import ModalComponent from "../component/ModalComponent";
 
 const AddEmployeeScreen = () => {
+  const [isModalOpen, setIsModalOpen] = useState(true);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <body>
       <div class="title">
         <h1>HRnet</h1>
       </div>
       <div class="container">
-        <Link to='/list'>View Current Employees</Link>
+        <Link to="/list">View Current Employees</Link>
         <h2>Create Employee</h2>
         <form action="#" id="create-employee">
           <label for="first-name">First Name</label>
@@ -49,13 +58,31 @@ const AddEmployeeScreen = () => {
           </select>
         </form>
 
-        <button onclick="saveEmployee()">Save</button>
+        <button
+          onClick={() => {
+            openModal();
+          }}
+        >
+          Save
+        </button>
       </div>
-      <div id="confirmation" class="modal">
+      <ModalComponent
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        style={{
+          overlay: { backgroundColor: "rgba(0, 0, 0, 0.7)" },
+          modal: {
+            borderRadius: "20px",
+            backgroundColor: "white",
+            padding: 15,
+          },
+        }}
+      >
         Employee Created!
-      </div>
+      </ModalComponent>
+      <div id="confirmation" class="modal"></div>
     </body>
-  )
-}
+  );
+};
 
-export default AddEmployeeScreen
+export default AddEmployeeScreen;
