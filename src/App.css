@@ -77,20 +77,21 @@ th,td{
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  overflow-x: auto;
+  margin-left: auto;
+
 }
 
 
 #create-employee {
   width: 600px;
   margin: 20px auto;
-  padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 }
 
 label {
@@ -140,8 +141,7 @@ button:hover {
 }
 
 .save_button{
-  /* max-width: 50px; */
-  margin-top: 25px;
+  margin: 25px auto;
   align-self: center;
 }
 
@@ -151,3 +151,25 @@ a {
   text-decoration: none;
   color: blue;
 }
+
+
+@media (max-width: 600px) {
+  #create-employee {
+    width: 100%;
+  }
+  
+  .row_form {
+    flex-direction: column;
+  }
+  .part_form{
+    width: 90%;
+    align-self: center;
+  }
+
+  .left-section,
+  .right-section {
+    flex: 100%;
+    padding-right: 0;
+  }
+}
+

@@ -21,17 +21,24 @@ const ModalComponent = ({ isOpen, onClose, style, children }) => {
     left: "50%",
     transform: "translate(-50%, -50%)",
     zIndex: 1001,
+
     ...style.modal,
+  };
+  const inModalFlexStyle = {
+    display: "flex",
+    flexDirection: "column",
   };
 
   return (
     <>
       <div style={overlayStyle} onClick={onClose}></div>
-      <div className="modal" style={modalStyle}>
-        {children}
-        <button style={{ marginLeft: 15 }} onClick={onClose}>
-          Fermer
-        </button>
+      <div style={modalStyle}>
+        <div style={inModalFlexStyle}>
+          {children}
+          <button style={{ alignSelf: "center", margin: 10 }} onClick={onClose}>
+            Fermer
+          </button>
+        </div>
       </div>
     </>
   );

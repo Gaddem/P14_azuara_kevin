@@ -78,7 +78,6 @@ const AddEmployeeScreen = () => {
   };
 
   return (
-    // <body>
     <>
       <div className="title">
         <h1>HRnet</h1>
@@ -88,7 +87,7 @@ const AddEmployeeScreen = () => {
         <h2>Create Employee</h2>
         <form id="create-employee">
           <div className="row_form">
-            <div>
+            <div className="part_form">
               <label htmlFor="first-name">First Name</label>
               <input
                 type="text"
@@ -138,7 +137,7 @@ const AddEmployeeScreen = () => {
                 <option value="Legal">Legal</option>
               </select>
             </div>
-            <div>
+            <div className="part_form">
               <fieldset className="address">
                 <legend>Address</legend>
 
