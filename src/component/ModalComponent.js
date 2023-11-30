@@ -16,7 +16,6 @@ const ModalComponent = ({ isOpen, onClose, style, children }) => {
 
   const modalStyle = {
     display: isOpen ? "block" : "none",
-
     position: "fixed",
     top: "50%",
     left: "50%",
@@ -28,7 +27,7 @@ const ModalComponent = ({ isOpen, onClose, style, children }) => {
   return (
     <>
       <div style={overlayStyle} onClick={onClose}></div>
-      <div class="modal" style={modalStyle}>
+      <div className="modal" style={modalStyle}>
         {children}
         <button style={{ marginLeft: 15 }} onClick={onClose}>
           Fermer
