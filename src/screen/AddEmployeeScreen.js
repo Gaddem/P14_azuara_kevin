@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ModalComponent from "../component/ModalComponent";
 import { states } from "../constante/states";
 import flatpickr from "flatpickr";
+import ModalComponent from 'modal-comp-react';
 import "flatpickr/dist/flatpickr.min.css";
 
 const AddEmployeeScreen = () => {
